@@ -1,0 +1,44 @@
+//GENERAL / UTILITIES
+@import './utils/reset.sass'
+@import './utils/color.scss'
+@import './utils/typography.scss'
+@import './utils/variables.sass'
+@import './utils/helpers.sass'
+
+//LAYOUT
+@import './layout/layout.sass'
+
+//ELEMENTS
+@import './elements/form.sass'
+@import './elements/quote.sass'
+
+//COMPONENTS
+@import './components/main-navbar.sass'
+@import './components/slider.sass'
+
+//APP PAGES
+@import './pages/page1.sass'
+@import './pages/page2.sass'
+@import './pages/page3.sass'
+@import './pages/page4.sass'
+@import './pages/page5.sass'
+
+html
+    +fluid-type($min_width, $max_width, $min_font, $max_font)
+
+body
+    font-size: 0.85em
+    background-color: $background
+    color: $primary
+    font-family: $font-primary
+    height: 100vh
+    +tablet
+        min-height: 100vh
+
+#slider
+    background: url('../assets/img/slider-bg.jpg')
+    background-position: center
+    background-size: cover
+    .slide
+        &.active, &.hide-left, &.hide-right, &.show-left, &.show-right
+            +gradient-diagonal(transparentize($primary, 0.25), transparentize(darken( desaturate($primary, 25%), 20%), 0.25))

@@ -1,0 +1,55 @@
+$baseColors : (
+    red : hsl(4, 80%, 50%),
+    pink : hsl(340, 72%, 50%),
+    purple : hsl(291, 54%, 50%),
+    deeppurple : hsl(262, 42%, 50%),
+    indigo : hsl(231, 38%, 50%),
+    blue : hsl(209, 80%, 50%),
+    lightblue : hsl(199, 88%, 50%),
+    cyan : hsl(187, 85%, 50%),
+    teal : hsl(174, 78%, 50%),
+    green : hsl(122, 29%, 50%),
+    lightgreen : hsl(88, 40%, 50%),
+    lime : hsl(66, 60%, 50%),
+    yellow : hsl(54, 90%, 50%),
+    amber : hsl(45, 90%, 50%),
+    orange : hsl(36, 90%, 50%),
+    deeporange : hsl(14, 90%, 50%),
+    brown : hsl(16, 17%, 50%),
+    grey : hsl(0, 0%, 50%),
+    coldgrey : hsl(200, 12%, 50%),
+    black : hsl(0,0,0%),
+    white : hsl(0,0,100%)
+);
+
+@function colorMap($basecolors){
+    $colors: ();
+    @each $key, $value in $basecolors{
+        $swatch : ();
+        $swatch : map-merge($swatch, ($key : $value));
+        @for $i from 1 through 20{
+            $swatch : map-merge($swatch,(
+                #{$key}-l-#{$i} : lighten($value, 2.5%*$i),
+                #{$key}-d-#{$i} : darken($value, 2.5%*$i)
+            ));
+        }
+        $colors: map-merge($colors, $swatch);
+    }
+
+    @return $colors
+};
+
+$colors : colorMap($baseColors);
+
+@each $key, $value in $colors{
+    .is-#{$key}{
+        background-color: $value
+    };
+    .txt-#{$key}{
+        color: $value
+    }
+}
+
+@function color($color){
+    @return map-get($colors, $color)
+}

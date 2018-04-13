@@ -1,0 +1,54 @@
+.page1
+    .header
+        flex-direction: column
+        color: white
+
+        .header_title
+            font-size: 2.2em
+            font-family: $font-title
+            position: relative
+            width: 100%
+            text-shadow: 0 4px 3px rgba(0,0,0,0.75)
+            text-transform: uppercase
+            &::before
+                content: attr(data-before)
+                position: absolute
+                top: -1em
+                left: 0
+                font-size: 0.4em
+                font-family: $font-primary
+                text-shadow: none
+
+        .header_catchphrase
+            margin-top: 1em
+
+        .header_link
+            +gradient-diagonal($accent, darken($accent, 15%))
+            margin-top: 2em
+            border-radius: $border-radius-1
+            align-self: flex-start
+            color: white
+            border: none
+            font-size: 0.8em
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25), 0 0 15px rgba(0,0,0,0.15)
+            transition: all 0.2s
+            cursor: pointer
+            &:hover
+                box-shadow: none
+                transform: translateY(3px) scale(0.98)
+
+    .cta
+        margin: 50px
+        background-color: $foreground
+        flex: 1
+        color: $primary
+        border-radius: $border-radius-2
+        box-shadow: 0 10px 15px 0 rgba(0,0,0,0.35), 0 0 10px 5px rgba(0,0,0,0.15)
+        .cta_title
+            font-size: 1.3em
+            margin-bottom: 0.5em
+            padding: $spacing-1
+            text-align: center
+            span
+                font-weight: bold
+                color: $accent

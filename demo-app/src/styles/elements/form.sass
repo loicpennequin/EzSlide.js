@@ -1,0 +1,47 @@
+.form
+    .form-field
+        padding: $spacing-1
+
+        label, input
+            display: block
+            width: 100%
+        label
+            font-size: 0.8em
+            font-weight: bold
+            margin-bottom: 3px
+        input
+            &:focus
+                outline: none
+            &:not([type='submit'])
+            font-size: 0.6em
+            border: none
+            padding: $spacing-1
+            border-bottom: solid $border-size-1 $primary
+            &[type='submit']
+                +gradient-diagonal($accent, darken($accent, 15%))
+                color: white
+                font-size: 0.8em
+                font-weight: bold
+                padding: 15px
+                border-radius: $border-radius-3                
+                border: none
+                cursor: pointer
+                &:hover
+                    +gradient-diagonal(darken($accent,15%), darken($accent, 30%))
+
+        .input-effect
+            position: relative
+            span
+                position: absolute
+                top: 0
+                left: 0
+            input
+                transition: all 0.2s
+                & + span
+                    transform: scale(0)
+                    transition: 0.2s
+                &:focus
+                    // transform: translateX(1em)
+                    padding-left: $spacing-3
+                    & + span
+                        transform: scale(1)

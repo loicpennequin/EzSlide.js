@@ -1,0 +1,109 @@
+/*=============================
+
+    Utilities
+
+    File Structure :
+    1 - colors
+    2 - typography
+    3 - sizes
+    4 - shadows
+    4 - mixins
+    5 - paths
+    ========================*/
+
+
+//COLORS
+    //See maps.scss for the base colors map. The colorMap function also provide a color swatch for each color with 10 shades of light and dark  with the following keys : colorname-l-(1 to 10), colorname-d-(1 to 10)
+
+$primary : color(red-l-3)
+$secondary : color(teal-l-2)
+$accent : color(lightblue-l-5)
+$background : color(white-d-1)
+$foreground : color(white)
+
+//FONTS
+$min_width: 320px
+$max_width: 1200px
+$min_font: 16px
+$max_font: 28px
+
+@font-face
+    font-family: "Raleway Bold"
+    src: url("../assets/fonts/Raleway-Bold.ttf")
+
+@font-face
+    font-family: "Tajawal"
+    src: url("../assets/fonts/Tajawal-Regular.ttf")
+
+@font-face
+    font-family: "Dancing Script"
+    src: url("../assets/fonts/DancingScript-Regular.ttf")
+
+
+$font-primary : "Tajawal", Helvetica
+$font-title : "Raleway Bold"
+$font-quote : "Dancing Script"
+
+//LAYOUT
+$spacing-1 : 5px
+$spacing-2 : 10px
+$spacing-3 : 15px
+$spacing-4 : 20px
+$spacing-5 : 25px
+$spacing-6 : 30px
+
+$size-1: 3rem
+$size-2: 2.5rem
+$size-3: 2rem
+$size-4: 1.5rem
+$size-5: 1.25rem
+$size-6: 1rem
+$size-7: 0.75rem
+$size-8: 0.6rem
+
+$border-size-1 : 1px
+$border-size-2 : 2px
+$border-size-3 : 5px
+$border-size-4 : 8px
+
+$border-radius-1: 5px
+$border-radius-2: 10px
+$border-radius-3: 18px
+
+//MIXINS
+
+=mobile
+    @media screen and (max-width: 580px)
+        @content
+
+=tablet
+    @media screen and (max-width: 980px)
+        @content
+
+=desktop-only
+    @media screen and (min-width: 981px)
+        @content
+
+=hd-only
+    @media screen and (min-width: 1400px)
+        @content
+
+=gradient-vertical($color1, $color2)
+    background: linear-gradient($color1, $color2)
+
+=gradient-horizontal($color1, $color2)
+    background: linear-gradient(to right, $color1, $color2)
+
+=gradient-diagonal($color1, $color2)
+    background: linear-gradient(130deg, $color1, $color2)
+
+
+//SHADOWS
+
+$boxshadow-1 : 0 3px 6px transparentize(color(black), 0.84), 0 3px 6px transparentize(color(black), 0.77)
+$boxshadow-2 : 0 10px 20px transparentize(color(black), 0.84), 0 6px 6px transparentize(color(black), 0.77)
+$boxshadow-3 : 0 14px 28px transparentize(color(black), 0.75), 0 10px 10px transparentize(color(black), 0.78)
+$boxshadow-4 : 0 19px 38px transparentize(color(black), 0.70), 0 15px 12px transparentize(color(black), 0.77)
+
+//PATHS
+$img-path: '../assets/img/'

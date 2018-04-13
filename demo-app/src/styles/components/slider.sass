@@ -1,0 +1,65 @@
+.slider
+    position: relative
+    overflow-x: hidden
+    .slide
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 0
+        top: 0
+        left: 0
+        object-fit: contain
+        display: block
+        &:not(.active)
+            .slide-content
+                opacity: 0
+        &.active, &.hide-left, &.hide-right, &.show-left, &.show-right
+            .slide-content
+                opacity: 1
+        &.active
+            z-index: 2
+        &.hide-left
+            animation: hide-left 1s forwards ease-out
+            z-index: 1
+        &.hide-right
+            animation: hide-right 1s forwards ease-out
+            z-index: 1
+        &.show-left
+            animation: show-left 1s forwards ease-out
+            z-index: 1
+        &.show-right
+            animation: show-right 1s forwards ease-out
+            z-index: 1
+
+        .slide-content
+            margin: 0 auto
+            height: 100%
+            +desktop-only
+                max-width: 980px
+            +hd-only
+                max-width: 1300px
+
+
+
+
+
+@keyframes hide-left
+    from
+        transform: none
+    to
+        transform: translateX(-100%)
+@keyframes hide-right
+    from
+        transform: none
+    to
+        transform: translateX(100%)
+@keyframes show-left
+    from
+        transform: translateX(-100%)
+    to
+        transform: none
+@keyframes show-right
+    from
+        transform: translateX(100%)
+    to
+        transform: none

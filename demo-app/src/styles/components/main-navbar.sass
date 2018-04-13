@@ -1,0 +1,33 @@
+.main-navbar
+    color: $primary
+    background-color: $foreground
+    .main-navbar_menu
+        margin-left: auto
+        padding-right: $spacing-6
+        z-index: 1
+        .main-navbar_menu-item
+            position: relative
+            cursor: pointer
+            transition: all 0.3s
+            margin-right: 5px
+            &:last-child
+                margin-right: 0
+            &:after
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: $primary
+                z-index: -1
+                transform-origin: center
+                transform: scale(0)
+                opacity: 0
+                transition: all 0.3s
+                border-radius: $border-radius-2
+            &:hover, &.active
+                color: $foreground
+                &:after
+                    transform: none
+                    opacity: 1
