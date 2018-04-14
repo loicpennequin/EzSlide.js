@@ -15,6 +15,9 @@
 .app
     display: flex
     flex-direction: column
+    height: 100vh
+    +tablet
+        min-height: 100vh
     .app_content
         flex: 1
 
@@ -43,6 +46,6 @@
 //Slide 1
 .page1, .page2
     display: grid
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 1fr 1fr
     +mobile
         display: block

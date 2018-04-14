@@ -6,35 +6,36 @@
             display: block
             width: 100%
         label
-            font-size: 0.8em
+            font-size: 0.7em
             font-weight: bold
             margin-bottom: 3px
         input
             &:focus
                 outline: none
             &:not([type='submit'])
-            font-size: 0.6em
-            border: none
-            padding: $spacing-1
-            border-bottom: solid $border-size-1 $primary
+                font-size: 0.6em
+                border: none
+                padding: $spacing-1
+                border-bottom: solid $border-size-1 $primary
             &[type='submit']
-                +gradient-diagonal($accent, darken($accent, 15%))
+                +gradient-diagonal($accent, lighten($accent, 15%))
                 color: white
                 font-size: 0.8em
                 font-weight: bold
-                padding: 15px
-                border-radius: $border-radius-3                
+                margin-top: $spacing-4
+                padding: $spacing-3
+                border-radius: $border-radius-3
                 border: none
                 cursor: pointer
                 &:hover
-                    +gradient-diagonal(darken($accent,15%), darken($accent, 30%))
+                    +gradient-diagonal(lighten($accent,15%), lighten($accent, 30%))
 
         .input-effect
             position: relative
             span
                 position: absolute
                 top: 0
-                left: 0
+                left: 5px
             input
                 transition: all 0.2s
                 & + span
@@ -42,6 +43,6 @@
                     transition: 0.2s
                 &:focus
                     // transform: translateX(1em)
-                    padding-left: $spacing-3
+                    padding-left: $spacing-4
                     & + span
                         transform: scale(1)

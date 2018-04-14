@@ -23,7 +23,7 @@
             margin-top: 1em
 
         .header_link
-            +gradient-diagonal($accent, darken($accent, 15%))
+            +gradient-diagonal($accent, lighten($accent, 15%))
             margin-top: 2em
             border-radius: $border-radius-1
             align-self: flex-start
@@ -38,9 +38,8 @@
                 transform: translateY(3px) scale(0.98)
 
     .cta
-        margin: 50px
         background-color: $foreground
-        flex: 1
+        width: 400px
         color: $primary
         border-radius: $border-radius-2
         box-shadow: 0 10px 15px 0 rgba(0,0,0,0.35), 0 0 10px 5px rgba(0,0,0,0.15)
@@ -51,4 +50,4 @@
             text-align: center
             span
                 font-weight: bold
-                color: $accent
+                color: $secondary

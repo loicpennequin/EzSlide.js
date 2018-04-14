@@ -15,6 +15,7 @@ export default class Slider{
     applyOptions(options){
         this.scrollable = options.scrollable === true;
         this.autoplay = options.autoplay;
+        this.loop = options.loop === true;
     }
 
     init(){
@@ -29,24 +30,35 @@ export default class Slider{
         nextBtn ? nextBtn.addEventListener('click', this.next.bind(this, null)) : null;
 
         if ( this.scrollable === true ) {
-            this.container.addEventListener('mouseenter', () => this.focused = true);
-            this.container.addEventListener('mouseleave', e => this.focused = false);
-
-            document.addEventListener('wheel', e => {
-                this.focused === true
-                ? e.deltaY > 0
-                ? this.next()
-                : this.previous()
-                : null;
-            });
+            this.setupScrollEvents();
         }
 
-        this.navigation.forEach( link => link.addEventListener('click', this.goToSlide.bind(this, link.dataset.slide)) )
+        this.navigation.forEach( link =>
+            link.addEventListener('click', this.goToSlide.bind(this, link.dataset.slide))
+        )
 
         if ( this.autoplay ) {
-            console.log('should autoplay');
             setInterval(this.next.bind(this, null), this.autoplay);
         }
+    }
+
+    setupScrollEvents(){
+        this.container.addEventListener('mouseenter', () => this.focused = true);
+        this.container.addEventListener('mouseleave', e => this.focused = false);
+
+        document.addEventListener('wheel', e => {
+            if ( this.focused && e.deltaY > 0 ) {
+                if ( this.loop || !this.loop && this.currentSlide !== this.slides.length-1 ) {
+                    e.preventDefault()
+                    this.next();
+                }
+            } else if ( this.focused && e.deltaY < 0 ) {
+                if ( this.loop || !this.loop && this.currentSlide !== 0 ) {
+                    e.preventDefault()
+                    this.previous();
+                }
+            }
+        });
     }
 
     updateNavigation(){
@@ -60,6 +72,9 @@ export default class Slider{
     }
 
     previous(index){
+        // if ( !index && this.currentSlide === 0 && this.loop === false ){
+        //     return;
+        // }
         if ( !this.frozen ){
             this.resetClasses();
 
@@ -77,6 +92,9 @@ export default class Slider{
     }
 
     next(index){
+        if ( !index && this.currentSlide === this.slides.length-1 && this.loop === false ){
+            return;
+        }
         if ( !this.frozen ){
             this.resetClasses();
 

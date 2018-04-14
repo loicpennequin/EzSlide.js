@@ -8,119 +8,110 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
                 integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     </head>
-    <body class="app">
-
-        <nav class="main-navbar flex-horizontal p-4">
-            <div class="main-navbar_brand flex-center">
-                EASY SLIDER
-            </div>
-
-            <ul class="main-navbar_menu flex-horizontal">
-                <li slide-link="slider" data-slide="0" class="main-navbar_menu-item p-3">Link 1</li>
-                <li slide-link="slider" data-slide="1" class="main-navbar_menu-item p-3">Link 2</li>
-                <li slide-link="slider" data-slide="2" class="main-navbar_menu-item p-3">Link 3</li>
-                <li slide-link="slider" data-slide="3" class="main-navbar_menu-item p-3">Link 4</li>
-                <li slide-link="slider" data-slide="4" class="main-navbar_menu-item p-3">Link 5</li>
-            </ul>
-        </nav>
-
-        <main id="slider" class="app_content slider">
-            <button slide-control="slider" slide-previous class="app-navigation-control left m-4">
-                <i class="fas fa-angle-left"></i>
-            </button>
-            <button slide-control="slider" slide-next class="app-navigation-control right m-4">
-                <i class="fas fa-angle-right"></i>
-            </button>
-
-            <section slider="slider" class="slide">
-                <div class="slide-content page1">
-                    <header class="header flex-center">
-                        <h1 data-before="Welcome to" class="header_title">Brand Name</h1>
-                        <p class="header_catchphrase">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        <button  class="p-2 header_link" slide-link="slider" data-slide="1">Read more...</button>
-                    </header>
-
-                    <div class="flex-center">
-                        <div class="cta p-6">
-                            <h2 class="cta_title">Join us <span>FOR FREE</span></h2>
-                            <form class="form">
-                                <div class="form-field">
-                                    <label>Name</label>
-                                    <div class="input-effect">
-                                        <input type="text" placeholder="Enter your name here">
-                                        <span><i class="fas fa-caret-right"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-field">
-                                    <label>Email</label>
-                                    <div class="input-effect">
-                                        <input type="email" placeholder="Enter your email here">
-                                        <span><i class="fas fa-caret-right"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-field">
-                                    <label>Phone Number</label>
-                                    <div class="input-effect">
-                                        <input type="text" placeholder="Enter your phone number here">
-                                        <span><i class="fas fa-caret-right"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-field">
-                                    <input type="submit" name="" value="SIGN UP NOW">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+    <body>
+        <div class="app">
+            <nav class="main-navbar flex-horizontal p-4">
+                <div class="main-navbar_brand flex-center">
+                    EASY SLIDER
                 </div>
-            </section>
 
-            <section slider="slider" class="slide">
-                <div class="slide-content page2">
+                <ul class="main-navbar_menu flex-horizontal">
+                    <li slide-link="slider" data-slide="0" class="main-navbar_menu-item p-3">Link 1</li>
+                    <li slide-link="slider" data-slide="1" class="main-navbar_menu-item p-3">Link 2</li>
+                    <li slide-link="slider" data-slide="2" class="main-navbar_menu-item p-3">Link 3</li>
+                    <li slide-link="slider" data-slide="3" class="main-navbar_menu-item p-3">Link 4</li>
+                </ul>
+            </nav>
 
-                    <div>
-                        <h2 class="nested-slider_title">Sample gallery</h2>
-                        <div class="nested-slider_container">
-                            <div id="nested-slider" class="slider">
-                                <img src="assets/img/nested-slider-1.jpg" class="slide" slider="nested-slider">
-                                <img src="assets/img/nested-slider-2.jpg" class="slide" slider="nested-slider">
-                                <img src="assets/img/nested-slider-3.jpg" class="slide" slider="nested-slider">
-                            </div>
-                            <div class="nested-slider_controls">
-                                <button slide-link="nested-slider" data-slide="0" class="nested-slider_btn"></button>
-                                <button slide-link="nested-slider" data-slide="1" class="nested-slider_btn"></button>
-                                <button slide-link="nested-slider" data-slide="2" class="nested-slider_btn"></button>
+            <main id="slider" class="app_content slider">
+                <button slide-control="slider" slide-previous class="app-navigation-control left m-4">
+                    <i class="fas fa-angle-left"></i>
+                </button>
+                <button slide-control="slider" slide-next class="app-navigation-control right m-4">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+
+                <section slider="slider" class="slide">
+                    <div class="slide-content page1">
+                        <header class="header flex-center">
+                            <h1 data-before="Welcome to" class="header_title">Brand Name</h1>
+                            <p class="header_catchphrase">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                            <button  class="p-2 header_link" slide-link="slider" data-slide="1">Read more...</button>
+                        </header>
+
+                        <div class="flex-center">
+                            <div class="cta p-6">
+                                <h2 class="cta_title">Join us <span>FOR FREE</span></h2>
+                                <form class="form">
+                                    <div class="form-field">
+                                        <label>Name</label>
+                                        <div class="input-effect">
+                                            <input type="text" placeholder="Enter your name here">
+                                            <span><i class="fas fa-caret-right"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Email</label>
+                                        <div class="input-effect">
+                                            <input type="email" placeholder="Enter your email here">
+                                            <span><i class="fas fa-caret-right"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Phone Number</label>
+                                        <div class="input-effect">
+                                            <input type="text" placeholder="Enter your phone number here">
+                                            <span><i class="fas fa-caret-right"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="submit" name="" value="SIGN UP NOW">
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <br>
-                        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                     </div>
+                </section>
 
-                    <div>
-                        RIGHT PART
+                <section slider="slider" class="slide">
+                    <div class="slide-content page2">
+                        <div class="flex-center-row">
+                            <h2 class="nested-slider_title">Sample gallery</h2>
+                            <div class="nested-slider_container">
+                                <div id="nested-slider" class="slider">
+                                    <img src="assets/img/nested-slider-1.jpg" class="slide" slider="nested-slider">
+                                    <img src="assets/img/nested-slider-2.jpg" class="slide" slider="nested-slider">
+                                    <img src="assets/img/nested-slider-3.jpg" class="slide" slider="nested-slider">
+                                </div>
+                                <div class="nested-slider_controls">
+                                    <button slide-link="nested-slider" data-slide="0" class="nested-slider_btn"></button>
+                                    <button slide-link="nested-slider" data-slide="1" class="nested-slider_btn"></button>
+                                    <button slide-link="nested-slider" data-slide="2" class="nested-slider_btn"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-center">
+                            <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        </div>
+
                     </div>
+                </section>
 
-                </div>
-            </section>
-
-            <section slider="slider" class="slide">
+                <section slider="slider" class="slide">
                 <div class="slide-content page3">
                     <h2 style="color: black"> WORK IN PROGRESS </h1>
-                </div>
-            </section>
+                    </div>
+                </section>
 
-            <section slider="slider" class="slide">
-                <div class="slide-content page4">
-                    <h2 style="color: black"> WORK IN PROGRESS </h1>
-                </div>
-            </section>
+                <section slider="slider" class="slide">
+                    <div class="slide-content page4">
+                        <h2 style="color: black"> WORK IN PROGRESS </h1>
+                    </div>
+                </section>
 
-            <section slider="slider" class="slide">
-                <div class="slide-content page5">
-                    <h2 style="color: black"> WORK IN PROGRESS </h1>
-                </div>
-            </section>
-
-        </main>
+            </main>
+        </div>
 
         <script type="module" src="js/main.js"></script>
     </body>

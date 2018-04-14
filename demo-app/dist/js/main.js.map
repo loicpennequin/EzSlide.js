@@ -1,1 +1,1 @@
-{"version":3,"names":[],"mappings":"","sources":["main.js"],"sourcesContent":["import Slider from './slides.js';\n\nconst mySlider = new Slider('slider', {scrollable: true});\n\nconst myNestedSlider = new Slider('nested-slider', {autoplay: 3000});\n"],"file":"main.js"}
+{"version":3,"names":[],"mappings":"","sources":["main.js"],"sourcesContent":["import Slider from './slides.js';\n\nconst mySlider = new Slider('slider', {scrollable: true});\n\nconst myNestedSlider = new Slider('nested-slider', {autoplay: 3000, loop: true});\n"],"file":"main.js"}
