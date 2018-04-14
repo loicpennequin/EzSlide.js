@@ -5250,22 +5250,22 @@ button {
     3 - layout
     @mixin =======================*/
 .is-primary {
-  background-color: #e9473c; }
+  background-color: #f7d162; }
 
 .is-secondary {
-  background-color: #33e6d4; }
+  background-color: #19ccba; }
 
 .is-accent {
-  background-color: #4bbef4; }
+  background-color: #053348; }
 
 .txt-primary {
-  color: #e9473c; }
+  color: #f7d162; }
 
 .txt-secondary {
-  color: #33e6d4; }
+  color: #19ccba; }
 
 .txt-accent {
-  color: #4bbef4; }
+  color: #053348; }
 
 .p-1 {
   padding: 5px; }
@@ -5330,6 +5330,12 @@ button {
   justify-content: center;
   align-items: center; }
 
+.flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
 /*=============================
 
     layouts
@@ -5344,7 +5350,11 @@ button {
     @mixin =======================*/
 .app {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh; }
+  @media screen and (max-width: 980px) {
+    .app {
+      min-height: 100vh; } }
   .app .app_content {
     flex: 1; }
     .app .app_content .app-navigation-control {
@@ -5372,7 +5382,7 @@ button {
 
 .page1, .page2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: 1fr 1fr; }
   @media screen and (max-width: 580px) {
     .page1, .page2 {
       display: block; } }
@@ -5383,33 +5393,34 @@ button {
     display: block;
     width: 100%; }
   .form .form-field label {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: bold;
     margin-bottom: 3px; }
-  .form .form-field input {
+  .form .form-field input:focus {
+    outline: none; }
+  .form .form-field input:not([type='submit']) {
     font-size: 0.6em;
     border: none;
     padding: 5px;
-    border-bottom: solid 1px #e9473c; }
-    .form .form-field input:focus {
-      outline: none; }
-    .form .form-field input[type='submit'] {
-      background: linear-gradient(130deg, #4bbef4, #0fa0e4);
-      color: white;
-      font-size: 0.8em;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 18px;
-      border: none;
-      cursor: pointer; }
-      .form .form-field input[type='submit']:hover {
-        background: linear-gradient(130deg, #0fa0e4, #0a6e9c); }
+    border-bottom: solid 1px #f7d162; }
+  .form .form-field input[type='submit'] {
+    background: linear-gradient(130deg, #053348, #096590);
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer; }
+    .form .form-field input[type='submit']:hover {
+      background: linear-gradient(130deg, #096590, #0e98d8); }
   .form .form-field .input-effect {
     position: relative; }
     .form .form-field .input-effect span {
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 5px; }
     .form .form-field .input-effect input {
       transition: all 0.2s; }
       .form .form-field .input-effect input + span {
@@ -5417,7 +5428,7 @@ button {
                 transform: scale(0);
         transition: 0.2s; }
       .form .form-field .input-effect input:focus {
-        padding-left: 15px; }
+        padding-left: 20px; }
         .form .form-field .input-effect input:focus + span {
           -webkit-transform: scale(1);
                   transform: scale(1); }
@@ -5428,10 +5439,10 @@ button {
   font-family: "Dancing Script"; }
   .quote::first-letter {
     font-size: 2em;
-    color: #4bbef4; }
+    color: #053348; }
 
 .main-navbar {
-  color: #e9473c;
+  color: #f7d162;
   background-color: white; }
   .main-navbar .main-navbar_menu {
     margin-left: auto;
@@ -5451,7 +5462,7 @@ button {
         left: 0;
         width: 100%;
         height: 100%;
-        background: #e9473c;
+        background: #f7d162;
         z-index: -1;
         -webkit-transform-origin: center;
                 transform-origin: center;
@@ -5477,8 +5488,8 @@ button {
     z-index: 0;
     top: 0;
     left: 0;
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
     display: block; }
     .slider .slide:not(.active) .slide-content {
       opacity: 0; }
@@ -5597,7 +5608,7 @@ button {
   .page1 .header .header_catchphrase {
     margin-top: 1em; }
   .page1 .header .header_link {
-    background: linear-gradient(130deg, #4bbef4, #0fa0e4);
+    background: linear-gradient(130deg, #053348, #096590);
     margin-top: 2em;
     border-radius: 5px;
     align-self: flex-start;
@@ -5613,10 +5624,9 @@ button {
               transform: translateY(3px) scale(0.98); }
 
 .page1 .cta {
-  margin: 50px;
   background-color: white;
-  flex: 1;
-  color: #e9473c;
+  width: 400px;
+  color: #f7d162;
   border-radius: 10px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35), 0 0 10px 5px rgba(0, 0, 0, 0.15); }
   .page1 .cta .cta_title {
@@ -5626,7 +5636,7 @@ button {
     text-align: center; }
     .page1 .cta .cta_title span {
       font-weight: bold;
-      color: #4bbef4; }
+      color: #19ccba; }
 
 .page2 #nested-slider {
   position: relative;
@@ -5636,11 +5646,12 @@ button {
   height: 100%; }
 
 .page2 .nested-slider_container {
-  height: 250px;
-  width: 70%;
+  height: 200px;
+  width: 300px;
   margin: 0 auto; }
   .page2 .nested-slider_container .nested-slider_controls {
     padding: 5px;
+    margin-top: 10px;
     display: flex;
     justify-content: center; }
     .page2 .nested-slider_container .nested-slider_controls .nested-slider_btn {
@@ -5679,18 +5690,14 @@ html {
 body {
   font-size: 0.85em;
   background-color: #f9f9f9;
-  color: #e9473c;
-  font-family: "Tajawal", Helvetica;
-  height: 100vh; }
-  @media screen and (max-width: 980px) {
-    body {
-      min-height: 100vh; } }
+  color: #f7d162;
+  font-family: "Tajawal", Helvetica; }
 
 #slider {
   background: url("../assets/img/slider-bg.jpg");
   background-position: center;
   background-size: cover; }
   #slider .slide.active, #slider .slide.hide-left, #slider .slide.hide-right, #slider .slide.show-left, #slider .slide.show-right {
-    background: linear-gradient(130deg, rgba(233, 71, 60, 0.75), rgba(148, 50, 43, 0.75)); }
+    background: linear-gradient(130deg, rgba(247, 209, 98, 0.75), rgba(200, 160, 42, 0.75)); }
 
 /*# sourceMappingURL=styles.css.map */
